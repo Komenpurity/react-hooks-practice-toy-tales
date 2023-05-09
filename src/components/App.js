@@ -21,8 +21,19 @@ function App() {
 
   function addItem(item){
       setToys([...toys,item])
-      console.log(toys) 
   }
+
+  function handleDelete (id){   
+    fetch(`http://localhost:3000/toys/${id}`, {
+      method: "DELETE",
+    })   
+      .then(response => response.json())
+      .then(() => { 
+          const rem =  toys.filter((t) => t.id !== id)  
+          setToys(rem)  
+      })  
+  }
+
 
   return (
     <>
@@ -31,7 +42,7 @@ function App() {
       <div className="buttonContainer">
         <button onClick={handleClick}>Add a Toy</button>
       </div>
-      <ToyContainer toys = {toys}/> 
+      <ToyContainer handleDelete={handleDelete} toys = {toys}/> 
     </>
   );
 }
