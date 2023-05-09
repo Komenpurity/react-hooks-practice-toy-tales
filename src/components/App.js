@@ -17,13 +17,17 @@ function App() {
       fetch("http://localhost:3000/toys")
       .then(response => response.json())
       .then(data => setToys(data)) 
-  },[] 
-  )
+  },[] )
+
+  function addItem(item){
+      setToys([...toys,item])
+      console.log(toys) 
+  }
 
   return (
     <>
       <Header />
-      {showForm ? <ToyForm /> : null}
+      {showForm ? <ToyForm addItem={addItem}/> : null}
       <div className="buttonContainer">
         <button onClick={handleClick}>Add a Toy</button>
       </div>
