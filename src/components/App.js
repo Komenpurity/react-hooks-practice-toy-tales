@@ -34,6 +34,19 @@ function App() {
       })  
   }
 
+  function handleLike(id){
+    fetch(`http://localhost:3000/toys/${id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        likes:  toys.likes,  
+      }),
+    })  
+    .then((r) => r.json())
+    .then(data => console.log(data)) 
+  }
 
   return (
     <>
@@ -42,7 +55,7 @@ function App() {
       <div className="buttonContainer">
         <button onClick={handleClick}>Add a Toy</button>
       </div>
-      <ToyContainer handleDelete={handleDelete} toys = {toys}/> 
+      <ToyContainer handleLike={handleLike} handleDelete={handleDelete} toys = {toys}/> 
     </>
   );
 }
