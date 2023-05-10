@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-hooks-practice-toy-tales/static/css/main.47fd6a33.css",
+    "main.js": "/react-hooks-practice-toy-tales/static/js/main.7599369e.js",
+    "index.html": "/react-hooks-practice-toy-tales/index.html",
+    "main.47fd6a33.css.map": "/react-hooks-practice-toy-tales/static/css/main.47fd6a33.css.map",
+    "main.7599369e.js.map": "/react-hooks-practice-toy-tales/static/js/main.7599369e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.47fd6a33.css",
+    "static/js/main.7599369e.js"
+  ]
+}
