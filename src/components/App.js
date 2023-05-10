@@ -14,7 +14,7 @@ function App() {
 
 
   useEffect(() => {
-      fetch("http://localhost:3000/toys")
+      fetch("https://toy-tales-api.onrender.com/toys")
       .then(response => response.json())
       .then(data => setToys(data)) 
   },[] )
@@ -24,7 +24,7 @@ function App() {
   }
 
   function handleDelete (id){   
-    fetch(`http://localhost:3000/toys/${id}`, {
+    fetch(`https://toy-tales-api.onrender.com/toys/${id}`, {
       method: "DELETE",
     })   
       .then(response => response.json())
@@ -34,14 +34,15 @@ function App() {
       })  
   }
 
-  function handleLike(id){
-    fetch(`http://localhost:3000/toys/${id}`, {
+  function handleLike(id){ 
+
+    fetch(`https://toy-tales-api.onrender.com/toys/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        likes:  toys.likes,  
+        likes:  toys.likes,   
       }),
     })  
     .then((r) => r.json())
